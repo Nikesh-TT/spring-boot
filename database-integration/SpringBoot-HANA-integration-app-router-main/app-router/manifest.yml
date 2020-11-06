@@ -1,0 +1,14 @@
+---
+applications:
+- name: sapccp-bankscrtysrv-approuter
+  routes:
+    - route: sapccp-bankscrtysrv.cfapps.us10.hana.ondemand.com
+  path: /
+  memory: 128M
+  buildpacks:
+    - nodejs_buildpack
+  env:
+    TENANT_HOST_PATTERN: 'sapccp-bankscrtysrv-approuter-(.*).cfapps.us10.hana.ondemand.com'
+    destinations: '[{"name":"dest-sapccp-bankscrtysrv", "url" :"https://sapccp-bankscrtysrv.cfapps.us10.hana.ondemand.com", "forwardAuthToken": true}]'
+  services:
+    - sapccp-bankscrtysrv-uaa

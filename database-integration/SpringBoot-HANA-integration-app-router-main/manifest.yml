@@ -1,0 +1,14 @@
+---
+applications:
+- name: CloudFoundarySpringBoot
+#  random-route: false
+  routes:
+    - route: sapccp-bankscrtysrv.cfapps.us10.hana.ondemand.com
+#    - route: springbootapp.us10.hana.ondemand.com
+  instances: 1
+  path: target/spring-hana-cloud-foundry-0.0.1-SNAPSHOT.war
+  env:
+    SPRING_PROFILES_DEFAULT: cf
+  services: 
+    - hana_migration
+    - sapccp-bankscrtysrv-uaa
