@@ -1,3 +1,4 @@
 database-integration/SpringBoot-HANA-integration-app-router-main/target/
 spring-security/spring-security/target
+spring-security/single-sign-on-oauth2-legacy_stack/target/
 *.iml
