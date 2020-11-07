@@ -1,0 +1,7 @@
+database-integration/SpringBoot-HANA-integration-app-router-main/target/out/
+database-integration/SpringBoot-HANA-integration-app-router-main/target/target/
+database-integration/SpringBoot-HANA-integration-app-router-main/target/.idea/
+spring-security/spring-security/target/out/
+spring-security/spring-security/target/target/
+spring-security/spring-security/target/.idea/
+*.iml
