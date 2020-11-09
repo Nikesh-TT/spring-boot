@@ -1,25 +1,32 @@
 server:
   port: 8082
-  servlet:
-    context-path: /ui
   session:
     cookie:
       name: UISESSION
+spring:
+  thymeleaf:
+    cache: false
   security:
-#   disabled the default Basic Authentication
+    #   disabled the default Basic Authentication
     basic:
       enabled: false
     oauth2:
       client:
-        clientId: SampleClientId
-        clientSecret: secret
-#       accessTokenUri is the URI to obtain the Access Tokens
-        accessTokenUri: http://localhost:8081/auth/oauth/authorize
-#       userAuthorizationUri is the authorization URI that users will be redirected to
-        userAuthorizationUri: http://localhost:8081/auth/oauth/authorize
-      resource:
-#       userInfoUri the URI of user endpoint to obtain current user details
-        userInfoUri: http://localhost:8081/auth/user/me
-  spring:
-    thymeleaf:
-      cache: false
+        registration:
+          custom-client:
+            client-id: R2dpxQ3vPrtfgF72
+            client-secret: fDw7Mpkk5czHNuSRtmhGmAGL42CaxQB9
+            client-name: Auth Server
+            scope: user_info
+            provider: custom-provider
+            redirect-uri: http://localhost:8082/login/oauth2/code/
+            client-authentication-method: basic
+            authorization-grant-type: authorization_code
+        provider:
+          custom-provider:
+#           accessTokenUri is the URI to obtain the Access Tokens
+            token-uri: http://localhost:8081/auth/oauth/token
+#           userAuthorizationUri is the authorization URI that users will be redirected to
+            authorization-uri: http://localhost:8081/auth/oauth/authorize
+            user-info-uri: http://localhost:8081/auth/user/me
+            user-name-attribute: name

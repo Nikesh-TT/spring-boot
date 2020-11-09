@@ -6,8 +6,6 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
 @SpringBootApplication
-// configuration of our Resource Server – which doubles as our primary Boot application
-@EnableResourceServer
 public class SingleSignOnOauth2LegacyStackApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
