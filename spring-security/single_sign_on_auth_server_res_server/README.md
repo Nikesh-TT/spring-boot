@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # single-sign-on-oauth2 Authorization Server and the Resource Server
 <br> Authorization Server and the Resource Server together here, as a single deployable unit
 <br/> Fix for the issue java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException
@@ -22,3 +23,8 @@
      </dependency>
      Note that from version 2.3.1 you don't need to add the javax.activation any longer. (see https://github.com/eclipse-ee4j/jaxb-ri/issues/1222)
  
+=======
+
+NOTE: If you get an error about JAXB (java.lang.ClassNotFoundException: javax.xml.bind.JAXBException), it’s because you’re using Java 11. To fix this, add JAXB to your build.gradle.
+runtimeOnly 'org.glassfish.jaxb:jaxb-runtime'
+>>>>>>> 77e5ffd08700776216b3b6cce51ecb73bb09c535
