@@ -6,3 +6,10 @@ Try to add a version to your spring-security-oauth2-client dependency, like so:
         <groupId>org.springframework.security</groupId>
         <artifactId>spring-security-oauth2-client</artifactId>
     </dependency>
+<br/> <span th:text="${#authentication.name}"> requires org.thymeleaf.extras:thymeleaf-extras-springsecurity5 dependency if your IDE is not able to resolve this dependency, download it manually from: https://jar-download.com/
+    
+    <dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
+			<version>3.0.4.RELEASE</version>
+	</dependency>
