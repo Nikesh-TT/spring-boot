@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "7101b4ee-7ef9-4fa0-8d0c-f7a13e580ac2",
+		"name": "spring-security",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/oauth/token?grant_type=client_credentials&scope=cas_incorporator",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "21f1bd1b-d90f-4928-bf7d-be71cec32e2f",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "763e6052-a082-403a-a9bf-d2687baa4cfc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/oauth/token?grant_type=client_credentials&scope=cas_incorporator",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						},
+						{
+							"key": "scope",
+							"value": "cas_incorporator"
+						}
+					]
+				},
+				"description": "Requesting access token from oauth server with scope"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/items",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"items"
+					]
+				},
+				"description": "Request with admin credentials"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
