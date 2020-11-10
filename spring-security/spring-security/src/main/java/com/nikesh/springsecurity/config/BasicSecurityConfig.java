@@ -34,20 +34,22 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
-//                With out roles
-//                .anyRequest()
-//                .authenticated()
-//                With roles
-//                path="/*" matches any URL in the "/" directory, and path="/**" matches any URL in the entire directory tree
-                .antMatchers("/api/*")
-                .access("hasRole('ROLE_ADMIN')")
-                .and()
-                .httpBasic()
-                .and()
-                .formLogin()
-                .failureHandler(authenticationFailureHandler());
+        http.authorizeRequests()
+            //                With out roles /api/** will permit anything which comes after the pattern
+            //                (eg. /api/items/ and /api/items/average.
+            //                /api/* will only permit /api/items not /api/items/average
+            .antMatchers("/api/*")
+            .permitAll()
+            //                With roles
+            //                path="/*" matches any URL in the "/" directory, and path="/**" matches any URL in the entire directory tree
+            .antMatchers("/api/**")
+            .access("hasRole('ROLE_ADMIN')")
+            .anyRequest().authenticated()
+            .and()
+            .httpBasic()
+            .and()
+            .formLogin()
+            .failureHandler(authenticationFailureHandler());
     }
 
     @Bean
