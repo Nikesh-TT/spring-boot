@@ -92,6 +92,51 @@
 				"description": "Request with admin credentials"
 			},
 			"response": []
+		},
+		{
+			"name": "https://9dbd2a72trial.authentication.us10.hana.ondemand.com/oauth/token?grant_type=client_credentials",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "dZquRDPz0ts5Sl2IOC6xJPQRYKs=",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "sb-na-7f2bae18-5524-4ec9-91ae-82f621f8bf72!t16829",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://9dbd2a72trial.authentication.us10.hana.ondemand.com/oauth/token?grant_type=client_credentials",
+					"protocol": "https",
+					"host": [
+						"9dbd2a72trial",
+						"authentication",
+						"us10",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
