@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "0df2866d-4f41-4398-b14a-f0772371f56d",
+		"name": "spring-boot-hana",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/employee/add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\":\"1\",\r\n\t\"firstName\":\"Nikesh\",\r\n\t\"lastName\":\"T T\",\r\n\t\"email\":\"email@example.com\",\r\n\t\"contact\":\"12121212\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"add"
+					]
+				},
+				"description": "Add a new employee"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/employee/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employee/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"all"
+					]
+				},
+				"description": "Get list of employees"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/employee/delete/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employee/delete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"delete",
+						"1"
+					]
+				},
+				"description": "Delete employee"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/employee/count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employee/count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"count"
+					]
+				},
+				"description": "Get the count of employees"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/employee/id/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employee/id/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"id",
+						"1"
+					]
+				},
+				"description": "Get employee details based on id"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

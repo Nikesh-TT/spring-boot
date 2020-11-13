@@ -1,0 +1,14 @@
+ID: spring-boot-hana
+version: 1.0.0
+_schema-version: "3.1"
+
+modules:
+  - name: spring-boot-hana
+    type: java
+    path: /
+    requires:
+      - name: hana_migration
+
+resources:
+  - name: hana_migration
+    type: org.cloudfoundry.existing-service

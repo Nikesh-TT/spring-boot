@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Secured Page</title>
@@ -8,5 +8,8 @@
 <h1>Secured Page</h1>
 <!--This is the line that will insert the name of the authenticated user. This line is why you needed the org.thymeleaf.extras:thymeleaf-extras-springsecurity5 dependency-->
 Welcome, <span th:text="${#authentication.name}">Name</span>
+<p sec:authorize="hasRole('ROLE_ADMIN')">
+    Authenticated
+</p>
 </body>
 </html>
