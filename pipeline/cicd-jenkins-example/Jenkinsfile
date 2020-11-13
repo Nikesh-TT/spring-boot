@@ -1,0 +1,23 @@
+// File used by the pipeline for building
+// First DSL
+pipeline{
+    // Since jenkins instance is going to be running in my machine i don't have any agents
+    agent any
+    tools{
+        // Local maven version
+        maven 'apache-maven-3.6.2'
+    }
+    stages{
+        stage('Build'){
+            steps{
+                bat 'mvn clean package'
+            }
+        }
+        stage('Deploy'){
+            steps{
+                bat 'cf login -a https://api.cf.us10.hana.ondemand.com -u nikesh.t.t@sap.com -p Idontknow@789'
+                bat 'cf push'
+            }
+        }
+    }
+}
