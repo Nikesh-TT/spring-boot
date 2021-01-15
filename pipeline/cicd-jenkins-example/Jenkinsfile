@@ -15,7 +15,8 @@ pipeline{
         }
         stage('Deploy'){
             steps{
-                bat 'cf login -a https://api.cf.us10.hana.ondemand.com -u nikesh.t.t@sap.com -p Idontknow@789'
+                //Please provide your cf credentials below
+                bat 'cf login -a https://api.cf.us10.hana.ondemand.com -u <email> -p <password>
                 bat 'cf push'
             }
         }
